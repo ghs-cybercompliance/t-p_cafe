@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop · Terry &amp; Perry Coffee</title>
+  <meta name="description" content="Order Terry & Perry coffee beans by the kilo, Kyoto matcha, mugs, tumblers and merch. Pick up at our branches or have it delivered.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="shop.css">
+</head>
+<body class="shop-page">
+
+  <!-- ============ NAV ============ -->
+  <header class="nav is-scrolled" id="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="brand" aria-label="Terry & Perry Coffee home">
+        <span class="brand__mark" aria-hidden="true">T<span>P</span></span>
+        <span class="brand__name">Terry&amp;Perry<small>Coffee</small></span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="index.html#story">Our Story</a>
+        <a href="index.html#menu">Menu</a>
+        <a href="shop.html" aria-current="page">Shop</a>
+        <a href="index.html#visit">Visit</a>
+      </nav>
+      <div class="nav__right">
+        <button class="cart-btn" id="cartOpen" aria-label="Open cart" aria-controls="cart">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 7V6a3 3 0 0 1 6 0v1"/></svg>
+          <span class="cart-btn__count" id="cartCount" hidden>0</span>
+        </button>
+        <button class="nav__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html#story">Our Story</a>
+      <a href="index.html#menu">Menu</a>
+      <a href="shop.html">Shop</a>
+      <a href="index.html#visit">Visit</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ SHOP HERO ============ -->
+    <section class="shop-hero">
+      <div class="container shop-hero__inner">
+        <div>
+          <p class="kicker">The T&amp;P shop</p>
+          <h1>Take the café <em>home.</em></h1>
+          <p class="lead">Freshly roasted beans by the kilo, the Kyoto matcha we whisk at the bar, and a few things with our name on them.</p>
+        </div>
+        <ul class="shop-steps" aria-label="How ordering works">
+          <li><b>1</b><span><strong>Add to cart</strong>Pick your beans, grind and size.</span></li>
+          <li><b>2</b><span><strong>Send your order</strong>It goes straight to us by SMS.</span></li>
+          <li><b>3</b><span><strong>We confirm</strong>Pay by GCash, bank transfer or cash, then pick up or get it delivered.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCTS ============ -->
+    <section class="section shop" id="products">
+      <div class="container">
+        <div class="tabs" role="tablist" aria-label="Product categories" id="shopTabs"></div>
+        <div class="product-grid" id="productGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ CART DRAWER ============ -->
+  <div class="drawer-overlay" id="cartOverlay" hidden></div>
+  <aside class="drawer" id="cart" aria-label="Shopping cart" aria-hidden="true">
+    <div class="drawer__head">
+      <h2 id="drawerTitle">Your cart</h2>
+      <button class="drawer__close" id="cartClose" aria-label="Close cart">×</button>
+    </div>
+
+    <!-- step 1: cart -->
+    <div class="drawer__step" data-step="cart">
+      <div class="drawer__body" id="cartItems"></div>
+      <div class="drawer__foot">
+        <div class="total-row"><span>Subtotal</span><strong id="cartSubtotal">₱0</strong></div>
+        <p class="drawer__fine">Delivery fee, if any, is confirmed by SMS with your order.</p>
+        <button class="btn btn--dark btn--block" id="toCheckout" disabled>Checkout</button>
+      </div>
+    </div>
+
+    <!-- step 2: checkout form -->
+    <form class="drawer__step" data-step="checkout" id="checkoutForm" hidden novalidate>
+      <div class="drawer__body">
+        <fieldset class="field-group">
+          <legend>How do you want it?</legend>
+          <div class="choice-row">
+            <label class="choice"><input type="radio" name="fulfillment" value="pickup" checked><span>Pick up</span></label>
+            <label class="choice"><input type="radio" name="fulfillment" value="delivery"><span>Delivery</span></label>
+          </div>
+          <label class="field" data-show="pickup">
+            <span>Pick-up branch</span>
+            <select name="branch" id="branchSelect"></select>
+          </label>
+          <label class="field" data-show="delivery" hidden>
+            <span>Delivery address</span>
+            <textarea name="address" rows="2" placeholder="House no., street, barangay, town"></textarea>
+          </label>
+        </fieldset>
+
+        <fieldset class="field-group">
+          <legend>Your details</legend>
+          <label class="field"><span>Full name</span><input name="name" autocomplete="name" required></label>
+          <label class="field"><span>Mobile number</span><input name="phone" type="tel" autocomplete="tel" placeholder="09XX XXX XXXX" required></label>
+        </fieldset>
+
+        <fieldset class="field-group">
+          <legend>Payment</legend>
+          <div class="choice-col">
+            <label class="choice"><input type="radio" name="payment" value="GCash" checked><span>GCash</span></label>
+            <label class="choice"><input type="radio" name="payment" value="Bank transfer"><span>Bank transfer</span></label>
+            <label class="choice"><input type="radio" name="payment" value="Cash on pick-up / delivery"><span>Cash on pick-up / delivery</span></label>
+          </div>
+          <p class="drawer__fine">No payment is taken on this site. We'll text you the payment details once we confirm your order.</p>
+        </fieldset>
+
+        <label class="field"><span>Notes <em>(optional)</em></span><textarea name="notes" rows="2" placeholder="e.g. preferred pick-up time"></textarea></label>
+        <p class="form-error" id="formError" role="alert" hidden></p>
+      </div>
+      <div class="drawer__foot">
+        <div class="total-row"><span>Subtotal</span><strong id="checkoutSubtotal">₱0</strong></div>
+        <div class="foot-actions">
+          <button type="button" class="btn btn--ghost" id="backToCart">Back</button>
+          <button type="submit" class="btn btn--dark btn--grow">Review order</button>
+        </div>
+      </div>
+    </form>
+
+    <!-- step 3: send -->
+    <div class="drawer__step" data-step="done" hidden>
+      <div class="drawer__body">
+        <div class="done-badge">✓</div>
+        <h3 class="done-title">Almost there!</h3>
+        <p class="done-text">Tap <strong>Send order by SMS</strong> so it reaches us. We'll reply to confirm stock, delivery fee and payment details.</p>
+        <pre class="order-summary" id="orderSummary"></pre>
+      </div>
+      <div class="drawer__foot drawer__foot--stack">
+        <a class="btn btn--dark btn--block" id="smsLink" href="#">Send order by SMS</a>
+        <button type="button" class="btn btn--ghost btn--block" id="copyOrder">Copy order text</button>
+        <p class="drawer__fine">On a computer? Copy the order and send it to <a id="phoneLink" href="#"></a> or message us on Facebook or Instagram.</p>
+        <button type="button" class="link-btn" id="newOrder">Start a new order</button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="brand brand--footer">
+        <span class="brand__mark" aria-hidden="true">T<span>P</span></span>
+        <span class="brand__name">Terry&amp;Perry<small>Coffee</small></span>
+      </div>
+      <p class="footer__tag">Fuel your daily grind with <strong>#terryperrycoffee</strong></p>
+      <p class="footer__copy">© <span id="year"></span> Terry &amp; Perry Coffee · Lanao del Norte, Philippines</p>
+    </div>
+  </footer>
+
+  <script src="shop-data.js"></script>
+  <script src="shop.js"></script>
+</body>
+</html>

@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="shop.css">
 </head>
 <body>
 
@@ -24,6 +25,7 @@
         <a href="#favorites">Favorites</a>
         <a href="#matcha">Matcha</a>
         <a href="#menu">Menu</a>
+        <a href="shop.html">Shop</a>
         <a href="#visit">Visit</a>
       </nav>
       <a href="#visit" class="btn btn--dark nav__cta">Find us</a>
@@ -36,6 +38,7 @@
       <a href="#favorites">Favorites</a>
       <a href="#matcha">Matcha</a>
       <a href="#menu">Menu</a>
+      <a href="shop.html">Shop</a>
       <a href="#visit">Visit</a>
     </div>
   </header>
@@ -225,6 +228,19 @@
       </div>
     </section>
 
+    <!-- ============ SHOP TEASER ============ -->
+    <section class="section shop-teaser" id="shop">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="kicker">The T&amp;P shop</p>
+          <h2>Take Terry&amp;Perry home.</h2>
+          <p class="section__sub">Beans by the kilo, Kyoto matcha, mugs and merch. Order online and pick up at any branch, or get it delivered.</p>
+        </div>
+        <div class="feat-grid" id="featGrid"><!-- filled from shop-data.js --></div>
+        <div class="shop-teaser__foot"><a href="shop.html" class="btn btn--dark">Visit the shop →</a></div>
+      </div>
+    </section>
+
     <!-- ============ GALLERY ============ -->
     <section class="section gallery" id="gallery">
       <div class="container">
@@ -301,6 +317,7 @@
     </div>
   </footer>
 
+  <script src="shop-data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
