@@ -2,3 +2,6 @@
 Thumbs.db
 desktop.ini
 .vscode/
+
+# Full interactive shop (cart + checkout), kept locally for the future real shop
+_shop-full/

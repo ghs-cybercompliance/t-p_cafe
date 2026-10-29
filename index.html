@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="shop.css">
 </head>
 <body>
 
@@ -28,7 +27,7 @@
         <a href="shop.html">Shop</a>
         <a href="#visit">Visit</a>
       </nav>
-      <a href="shop.html" class="btn btn--dark nav__cta">Shop online</a>
+      <a href="shop.html" class="btn btn--dark nav__cta">Our shop</a>
       <button class="nav__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
         <span></span><span></span>
       </button>
@@ -39,7 +38,7 @@
       <a href="#matcha">Matcha</a>
       <a href="#menu">Menu</a>
       <a href="#visit">Visit</a>
-      <a href="shop.html" class="mobile-nav__shop">Shop online →</a>
+      <a href="shop.html" class="mobile-nav__shop">Our shop →</a>
     </div>
   </header>
 
@@ -234,9 +233,26 @@
         <div class="section__head reveal">
           <p class="kicker">The T&amp;P shop</p>
           <h2>Take Terry&amp;Perry home.</h2>
-          <p class="section__sub">Beans by the kilo, Kyoto matcha, mugs and merch. Order online and pick up at any branch, or get it delivered.</p>
+          <p class="section__sub">Beans by the kilo, Kyoto matcha, mugs and merch. Available at our branches, with online ordering coming soon.</p>
         </div>
-        <div class="feat-grid" id="featGrid"><!-- filled from shop-data.js --></div>
+        <div class="feat-grid">
+          <a class="feat" href="shop.html#coffee-beans">
+            <div class="feat__art" style="--art-bg:#4e392a"><svg viewBox="0 0 200 200" role="img" aria-label="Daily Grind Espresso Blend" xmlns="http://www.w3.org/2000/svg"> <ellipse cx="100" cy="180" rx="56" ry="6" fill="#000" opacity=".08"/> <path d="M58 52 h84 l6 118 a6 6 0 0 1 -6 6 h-84 a6 6 0 0 1 -6 -6z" fill="#4e392a"/> <rect x="58" y="44" width="84" height="14" rx="3" fill="#4e392a"/> <rect x="58" y="44" width="84" height="14" rx="3" fill="#000" opacity=".18"/> <path d="M58 58 h84 l1 8 h-86z" fill="#000" opacity=".08"/> <circle cx="100" cy="112" r="30" fill="#d9bf9f"/> <text x="100" y="122" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="900" font-size="26" letter-spacing="-2.08" fill="#4e392a">T<tspan opacity=".75">P</tspan></text> <rect x="76" y="152" width="48" height="4" rx="2" fill="#d9bf9f" opacity=".6"/></svg></div>
+            <div class="feat__body"><h3>Daily Grind Espresso Blend</h3><span class="price">from ₱420</span></div>
+          </a>
+          <a class="feat" href="shop.html#coffee-beans">
+            <div class="feat__art" style="--art-bg:#8b6a4c"><svg viewBox="0 0 200 200" role="img" aria-label="Mindanao Single Origin" xmlns="http://www.w3.org/2000/svg"> <ellipse cx="100" cy="180" rx="56" ry="6" fill="#000" opacity=".08"/> <path d="M58 52 h84 l6 118 a6 6 0 0 1 -6 6 h-84 a6 6 0 0 1 -6 -6z" fill="#8b6a4c"/> <rect x="58" y="44" width="84" height="14" rx="3" fill="#8b6a4c"/> <rect x="58" y="44" width="84" height="14" rx="3" fill="#000" opacity=".18"/> <path d="M58 58 h84 l1 8 h-86z" fill="#000" opacity=".08"/> <circle cx="100" cy="112" r="30" fill="#fff3e3"/> <text x="100" y="122" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="900" font-size="26" letter-spacing="-2.08" fill="#8b6a4c">T<tspan opacity=".75">P</tspan></text> <rect x="76" y="152" width="48" height="4" rx="2" fill="#fff3e3" opacity=".6"/></svg></div>
+            <div class="feat__body"><h3>Mindanao Single Origin</h3><span class="price">from ₱480</span></div>
+          </a>
+          <a class="feat" href="shop.html#matcha-tea">
+            <div class="feat__art" style="--art-bg:#6a8d34"><svg viewBox="0 0 200 200" role="img" aria-label="Uji Ceremonial Matcha" xmlns="http://www.w3.org/2000/svg"> <ellipse cx="100" cy="180" rx="56" ry="6" fill="#000" opacity=".08"/> <rect x="66" y="62" width="68" height="104" rx="6" fill="#6a8d34"/> <rect x="62" y="50" width="76" height="22" rx="6" fill="#6a8d34"/> <rect x="62" y="50" width="76" height="22" rx="6" fill="#000" opacity=".2"/> <rect x="66" y="92" width="68" height="46" fill="#f4f7ec"/> <text x="100" y="124" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="900" font-size="24" letter-spacing="-1.92" fill="#6a8d34">T<tspan opacity=".75">P</tspan></text></svg></div>
+            <div class="feat__body"><h3>Uji Ceremonial Matcha</h3><span class="price">from ₱690</span></div>
+          </a>
+          <a class="feat" href="shop.html#drinkware">
+            <div class="feat__art" style="--art-bg:#f3efe9"><svg viewBox="0 0 200 200" role="img" aria-label="TP Stoneware Mug" xmlns="http://www.w3.org/2000/svg"> <ellipse cx="100" cy="180" rx="56" ry="6" fill="#000" opacity=".08"/> <path d="M134 86 a22 22 0 0 1 0 44" fill="none" stroke="#f3efe9" stroke-width="12"/> <path d="M134 86 a22 22 0 0 1 0 44" fill="none" stroke="#000" stroke-opacity=".08" stroke-width="12"/> <rect x="56" y="66" width="82" height="96" rx="12" fill="#f3efe9"/> <rect x="56" y="66" width="82" height="96" rx="12" fill="none" stroke="#000" stroke-opacity=".06" stroke-width="2"/> <ellipse cx="97" cy="68" rx="41" ry="6" fill="#000" opacity=".12"/> <text x="97" y="126" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="900" font-size="30" letter-spacing="-2.4" fill="#1d1916">T<tspan opacity=".75">P</tspan></text></svg></div>
+            <div class="feat__body"><h3>TP Stoneware Mug</h3><span class="price">₱450</span></div>
+          </a>
+        </div>
         <div class="shop-teaser__foot"><a href="shop.html" class="btn btn--dark">Visit the shop →</a></div>
       </div>
     </section>
@@ -314,7 +330,7 @@
       </div>
       <nav class="footer__links" aria-label="Footer">
         <a href="#menu">Menu</a>
-        <a href="shop.html">Shop online</a>
+        <a href="shop.html">Shop</a>
         <a href="#visit">Branches</a>
         <a href="https://www.instagram.com/terryperrycoffee/" target="_blank" rel="noopener">Instagram</a>
       </nav>
@@ -323,7 +339,6 @@
     </div>
   </footer>
 
-  <script src="shop-data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

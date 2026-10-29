@@ -268,13 +268,3 @@ document.querySelectorAll(".reveal").forEach((el, i) => {
 });
 
 document.getElementById("year").textContent = new Date().getFullYear();
-
-// Shop teaser: featured products from shop-data.js.
-document.getElementById("featGrid").innerHTML = PRODUCTS.filter((p) => p.featured).slice(0, 4).map((p) => `
-  <a class="feat reveal is-visible" href="shop.html">
-    <div class="feat__art" style="--art-bg:${p.art ? p.art.color : "#eee"}">${productArt(p)}</div>
-    <div class="feat__body">
-      <h3>${esc(p.name)}</h3>
-      <span class="price">${priceLabel(p)}</span>
-    </div>
-  </a>`).join("");

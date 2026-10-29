@@ -334,3 +334,67 @@ p { margin: 0 0 1em; }
   .hero__float--b { right: 0; }
   .rating-band__inner { flex-direction: column; align-items: flex-start; }
 }
+
+/* ============ Shop (static demo page + homepage teaser) ============ */
+.nav__links a[aria-current="page"] { color: var(--ink); }
+.nav__links a[aria-current="page"]::after { width: 100%; }
+a.tab { text-decoration: none; }
+
+.shop-hero { padding: 140px 0 40px; background: linear-gradient(180deg, #f3ece3 0%, var(--bg) 100%); }
+.shop-hero__inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: end; }
+.shop-hero h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); font-weight: 900; letter-spacing: -0.04em; margin-bottom: 18px; }
+.shop-hero h1 em { font-style: normal; color: var(--brown); }
+.shop-notice { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); }
+.shop-notice__tag {
+  display: inline-block; padding: 5px 12px; border-radius: 999px; background: var(--matcha-soft); color: var(--matcha-deep);
+  font: 800 .7rem var(--font-display); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 14px;
+}
+.shop-notice h2 { font-size: 1.5rem; margin-bottom: 10px; }
+.shop-notice p { color: var(--muted); font-size: .95rem; }
+.shop-notice__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+
+.shop { padding-top: 48px; }
+.shop .tabs { position: sticky; top: 84px; z-index: 5; padding: 10px 0; background: var(--bg); }
+.shop-cat { padding-top: 32px; scroll-margin-top: 150px; }
+.shop-cat h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); margin-bottom: 24px; }
+.shop-fine { color: var(--muted); font-size: .9rem; text-align: center; margin-top: 48px; }
+
+.product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+.pc { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: transform .3s, box-shadow .3s; }
+.pc:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.pc__art, .feat__art { position: relative; display: grid; place-items: center; background: color-mix(in srgb, var(--art-bg) 14%, #f6f2ec); }
+.pc__art { aspect-ratio: 1 / .85; }
+.pc__art svg { width: 78%; height: 100%; transition: transform .5s ease; }
+.pc:hover .pc__art svg { transform: scale(1.05) rotate(-2deg); }
+.pc__badge {
+  position: absolute; top: 14px; left: 14px; padding: 5px 12px; border-radius: 999px; background: var(--ink); color: #fff;
+  font: 700 .68rem var(--font-display); letter-spacing: .12em; text-transform: uppercase;
+}
+.pc__body { padding: 20px 20px 22px; }
+.pc__top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.pc__top h3 { font-size: 1.08rem; font-weight: 800; }
+.pc__desc { color: var(--muted); font-size: .9rem; line-height: 1.55; margin: 8px 0 0; }
+.pc__opts { list-style: none; padding: 14px 0 0; margin: 14px 0 0; border-top: 1px dashed var(--line); display: grid; gap: 6px; font-size: .86rem; }
+.pc__opts span { display: inline-block; min-width: 64px; font-weight: 700; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--brown); }
+
+.feat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.feat { display: block; text-decoration: none; background: var(--surface); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); transition: transform .3s, box-shadow .3s; }
+.feat:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.feat__art { aspect-ratio: 1; }
+.feat__art svg { width: 76%; }
+.feat__body { padding: 16px 18px 20px; }
+.feat__body h3 { font-size: 1rem; font-weight: 800; margin-bottom: 4px; }
+.shop-teaser__foot { display: flex; justify-content: center; margin-top: 36px; }
+
+@media (max-width: 1080px) { .feat-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) {
+  .shop-hero { padding-top: 110px; }
+  .shop-hero__inner { grid-template-columns: 1fr; gap: 32px; }
+  .shop .tabs { top: 76px; flex-wrap: nowrap; overflow-x: auto; }
+  .shop .tabs .tab { flex: none; }
+}
+@media (max-width: 640px) {
+  .product-grid { grid-template-columns: 1fr; }
+  .feat-grid { gap: 12px; }
+  .feat__body { padding: 12px 14px 16px; }
+}
